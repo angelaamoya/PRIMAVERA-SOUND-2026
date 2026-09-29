@@ -310,7 +310,7 @@ h3 {
 }
 
 .hero__media {
-    flex: 0 1 460px;              /* tamaño máximo del círculo en escritorio */
+    flex: 0 1 700px;              /* tamaño máximo del círculo en escritorio */
     margin: 0 auto;
     position: relative;
     animation: popIn 0.8s 0.4s ease both;
