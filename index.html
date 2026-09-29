@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Cats · Datos felinos</title>
+    <meta name="description" content="Curiosidades e imágenes sobre gatos. Ejemplo de maquetación neo-brutalista con CSS puro, JS nativo y AOS.">
+
+    <!-- Tipografías (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap">
+
+    <!-- AOS desde CDN (jsDelivr), versión fijada -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Nuestros estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tema claro/oscuro: se carga en el head para aplicar el tema antes de pintar la página -->
+    <script src="js/theme.js"></script>
+</head>
+<body>
+
+    <!-- ============ NAVEGACIÓN ============ -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#inicio" class="logo">Cool<span>Cats</span></a>
+
+            <ul class="nav__links" id="menu">
+                <li><a href="#inicio"></a></li>
+                <li><a href="#datos">lineup</a></li>
+                <li><a href="#galeria">tickets</a></li>
+                <li><a href="#sobre">information</a></li>
+            </ul>
+
+            <div class="nav__actions">
+
+                <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="inicio">
+        <div class="container hero__inner">
+            <div class="hero__text">
+                <div class="hero__buttons">
+
+            <div class="hero__media">
+                <div class="hero__frame">
+                    <img src="media/1x/Mesa de trabajo 10.png" alt="Gato adorable">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Imágenes: Cat as a Service (https://cataas.com). /cat/etiqueta devuelve un gato aleatorio con esa etiqueta;
+         usamos una etiqueta distinta en cada imagen para que el navegador no reutilice la misma foto. -->
+    <main>
+        <!-- ============ DATOS (flexbox) ============ -->
+        <section class="section" id="datos">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Datos fascinantes</h2>
+
+                <div class="cards">
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="0">
+                        <article class="card card--yellow">
+                            <div class="card__img">
+                                <img src="https://cataas.com/cat/tabby?width=640" alt="Gato atigrado" loading="lazy">
+                            </div>
+                            <div class="card__body">
+                                <span class="card__num">01</span>
+                                <h3>Oído superpotente</h3>
+                                <p>
+                                    Los gatos oyen sonidos de hasta 64 kHz, frente a los 20 kHz del oído
+                                    humano. Sus orejas giran 180 grados para localizar con precisión el
+                                    origen de un sonido.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="100">
+                        <article class="card card--pink">
+                            <div class="card__img">
+                                <img src="https://cataas.com/cat/white?width=640" alt="Gato blanco" loading="lazy">
+                            </div>
+                            <div class="card__body">
+                                <span class="card__num">02</span>
+                                <h3>La magia de los bigotes</h3>
+                                <p>
+                                    Los bigotes miden aproximadamente lo mismo que el ancho de su cuerpo.
+                                    Los usan para saber si caben por un hueco y para detectar objetos
+                                    cercanos sin verlos.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="cards__item" data-aos="fade-up" data-aos-delay="200">
+                        <article class="card card--blue">
+                            <div class="card__img">
+                                <img src="https://cataas.com/cat/fluffy?width=640" alt="Gato esponjoso" loading="lazy">
+                            </div>
+                            <div class="card__body">
+                                <span class="card__num">03</span>
+                                <h3>Terapia de ronroneo</h3>
+                                <p>
+                                    Ronronean a una frecuencia de entre 25 y 150 Hz, un rango que se ha
+                                    relacionado con la regeneración de huesos y tejidos. Podría explicar
+                                    por qué suelen curarse más rápido que otros animales.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ GALERÍA (grid) ============ -->
+        <section class="section section--alt" id="galeria">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Galería</h2>
+
+                <div class="gallery">
+                    <figure class="gallery__item" data-aos="zoom-in">
+                        <div class="gallery__img"><img src="https://cataas.com/cat/black?width=640" alt="Gato negro" loading="lazy"></div>
+                        <figcaption>Criaturas majestuosas</figcaption>
+                    </figure>
+                    <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="gallery__img"><img src="https://cataas.com/cat/playing?width=640" alt="Gato jugando" loading="lazy"></div>
+                        <figcaption>Compañeros juguetones</figcaption>
+                    </figure>
+                    <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="gallery__img"><img src="https://cataas.com/cat/grumpy?width=640" alt="Gato con cara de pocos amigos" loading="lazy"></div>
+                        <figcaption>Personalidades misteriosas</figcaption>
+                    </figure>
+                    <figure class="gallery__item" data-aos="zoom-in">
+                        <div class="gallery__img"><img src="https://cataas.com/cat/sleeping?width=640" alt="Gato durmiendo" loading="lazy"></div>
+                        <figcaption>Siestas eternas</figcaption>
+                    </figure>
+                    <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="gallery__img"><img src="https://cataas.com/cat/orange?width=640" alt="Gato naranja" loading="lazy"></div>
+                        <figcaption>Cazadores natos</figcaption>
+                    </figure>
+                    <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="gallery__img"><img src="https://cataas.com/cat/kitten?width=640" alt="Gatito" loading="lazy"></div>
+                        <figcaption>Curiosidad infinita</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SOBRE ELLOS (flexbox) ============ -->
+        <section class="section" id="sobre">
+            <div class="container about">
+                <div class="about__intro" data-aos="fade-right">
+                    <h2 class="section__title section__title--left">Sobre los gatos</h2>
+                    <p>
+                        Llevan miles de años a nuestro lado y siguen siendo un misterio. Tres claves
+                        para entenderlos un poco mejor.
+                    </p>
+                    <a href="#inicio" class="btn btn--dark">Volver arriba ↑</a>
+                </div>
+
+                <ul class="about__list">
+                    <li class="about__item" data-aos="fade-left">
+                        <h3>Domesticación</h3>
+                        <p>
+                            Se domesticaron por primera vez en Oriente Próximo hacia el 7500 a. C. Se
+                            valoraban por su habilidad para cazar plagas y proteger los graneros.
+                        </p>
+                    </li>
+                    <li class="about__item" data-aos="fade-left" data-aos-delay="100">
+                        <h3>Comunicación</h3>
+                        <p>
+                            Se comunican con vocalizaciones, lenguaje corporal y marcas de olor.
+                            Incluso han desarrollado maullidos específicos para los humanos.
+                        </p>
+                    </li>
+                    <li class="about__item" data-aos="fade-left" data-aos-delay="200">
+                        <h3>Patrones de sueño</h3>
+                        <p>
+                            Duermen una media de 15 horas al día, y algunos llegan a las 20. Es un rasgo
+                            evolutivo heredado de sus ancestros salvajes.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a href="#inicio" class="logo logo--footer">Cool<span>Cats</span></a>
+            <ul class="footer__links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#datos">Datos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#sobre">Sobre ellos</a></li>
+            </ul>
+            <p class="footer__copy">&copy; <span id="year">2026</span> Cool Cats Facts. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- AOS desde CDN y nuestro JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
