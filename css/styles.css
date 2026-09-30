@@ -481,8 +481,9 @@ main {
 /* ---------- 10. SOBRE ELLOS (FLEXBOX) ---------- */
 .about {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 3rem;
+    flex-direction: column;
 }
 
 .about__intro {
