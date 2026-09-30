@@ -7,7 +7,6 @@
 /* ---------- 1. VARIABLES ---------- */
 :root {
     /* Colores de acento (iguales en los dos modos) */
-    --yellow: #FFD23F;
     --pink: #CD6C97;
     --blue: #75D2DE;
     --green: #B6F6A0;
@@ -35,7 +34,7 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var(--century-gothic);
     font-size: 1.05rem;
     line-height: 1.6;
     color: var(--ink);
@@ -80,6 +79,7 @@ h3 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    gap: 0rem;
 }
 
 /* ---------- 3. BOTONES ---------- */
@@ -104,26 +104,6 @@ h3 {
     box-shadow: var(--shadow);
 }
 
-/* Efecto "pulsado": el botón baja hasta tapar su sombra */
-.btn:active {
-    transform: translate(4px, 4px);
-    box-shadow: 0 0 0 var(--ink);
-}
-
-.btn--primary {
-    background: var(--pink);
-    color: var(--on-accent);
-}
-
-.btn--ghost {
-    background: var(--surface);
-    color: var(--ink);
-}
-
-.btn--dark {
-    background: var(--ink);
-    color: var(--bg);
-}
 
 /* ---------- 4. NAVEGACIÓN ---------- */
 .nav {
@@ -158,7 +138,7 @@ h3 {
 }
 
 .logo {
-    width: 0,1rem;
+    width: 20rem;
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -186,6 +166,15 @@ h3 {
 .nav__links a {
     display: block;
     padding: 0.4rem 0.8rem;
+    font-weight: 300;
+    text-decoration: none;
+    border: 3px solid transparent;
+    border-radius: var(--radius);
+    transition: background-color var(--speed) ease, border-color var(--speed) ease, transform var(--speed) ease;
+}
+.nav__links li:nth-child(3) a {
+    display: block;
+    padding: 0.4rem 0.8rem;
     font-weight: 700;
     text-decoration: none;
     border: 3px solid transparent;
@@ -193,12 +182,7 @@ h3 {
     transition: background-color var(--speed) ease, border-color var(--speed) ease, transform var(--speed) ease;
 }
 
-.nav__links a:hover {
-    background: var(--yellow);
-    color: var(--on-accent);
-    border-color: var(--ink);
-    transform: rotate(-2deg);
-}
+
 
 .nav__actions {
     display: flex;
@@ -443,28 +427,17 @@ main {
 .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 /* El wrapper lleva el data-aos; así la animación de AOS
    no pisa el transform del :hover de la tarjeta */
 .cards__item {
-    flex: 1 1 280px;
+    flex: 1 0 280px;
     display: flex;
+    justify-content: center;
 }
 
-.card {
-    --card-accent: var(--yellow);
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: var(--surface);
-    border: var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: transform var(--speed) ease, box-shadow var(--speed) ease;
-}
 
 .card:hover {
     transform: translate(-4px, -4px) rotate(-1deg);
@@ -472,10 +445,8 @@ main {
 }
 
 .card__img {
-    aspect-ratio: 16 / 9;
     border-bottom: var(--border);
     overflow: hidden;
-    background: repeating-linear-gradient(45deg, var(--card-accent) 0 14px, var(--surface) 14px 28px);
 }
 
 
