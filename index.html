@@ -9,23 +9,22 @@
     <!-- Tipografías (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap">
-
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+     <!-- Tipografías (locales) -->
+      <link href="fonts/century gothic/Century Gothic Bold Italic.otf">
+      <link href="fonts/century gothic/Century Gothic Bold.otf">
+    <link href="fonts/century gothic/Century Gothic Italic.otf">
+    <link href="fonts/century gothic/Century Gothic Regular.otf">
     <!-- AOS desde CDN (jsDelivr), versión fijada -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <!-- Nuestros estilos -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Tema claro/oscuro: se carga en el head para aplicar el tema antes de pintar la página -->
-    <script src="js/theme.js"></script>
-</head>
-<body>
-
     <!-- ============ NAVEGACIÓN ============ -->
     <nav class="nav">
         <div class="nav__inner">
-            <a href="#inicio" class="logo">Cool<span>Cats</span></a>
+            <a href="#inicio" class="logo"><img src="media/1x/logo.svg" alt="logo ps"></a>
 
             <ul class="nav__links" id="menu">
                 <li><a href="#inicio"></a></li>
@@ -52,15 +51,11 @@
                 <div class="hero__buttons">
 
             <div class="hero__media">
-                <div class="hero__frame">
-                    <img src="media/1x/Mesa de trabajo 10.png" alt="logo ps">
+                    <img src="media/1x/ps logo.svg" alt="logo ps">
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- Imágenes: Cat as a Service (https://cataas.com). /cat/etiqueta devuelve un gato aleatorio con esa etiqueta;
-         usamos una etiqueta distinta en cada imagen para que el navegador no reutilice la misma foto. -->
     <main>
         <!-- ============ GALERÍA (grid) ============ -->
         <section class="section section--alt" id="galeria">
@@ -70,27 +65,21 @@
                 <div class="gallery">
                     <figure class="gallery__item" data-aos="zoom-in">
                         <div class="gallery__img"><img src="media/headliners/badgyal.png"></div>
-                        <figcaption>Bad Gyal</figcaption>
                     </figure>
                     <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="100">
                         <div class="gallery__img"><img src="media/headliners/dojacat.png" alt="Gato jugando" loading="lazy"></div>
-                        <figcaption>doja cat</figcaption>
                     </figure>
                     <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="100">
                         <div class="gallery__img"><img src="media/headliners/jade.png" alt="Gato jugando" loading="lazy"></div>
-                        <figcaption>jade</figcaption>
                     </figure>
                     <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="100">
                         <div class="gallery__img"><img src="media/headliners/addison rae.png" alt="Gato jugando" loading="lazy"></div>
-                        <figcaption>addison rae</figcaption>
                     </figure>                    
                     <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="100">
                         <div class="gallery__img"><img src="media/headliners/gorillaz.png" alt="Gato jugando" loading="lazy"></div>
-                        <figcaption>gorillaz</figcaption>
                     </figure> 
                     <figure class="gallery__item" data-aos="zoom-in" data-aos-delay="100">
                         <div class="gallery__img"><img src="media/headliners/the xx.png" alt="Gato jugando" loading="lazy"></div>
-                        <figcaption>the xx</figcaption>
                     </figure>        
                 </div>
             </div>
@@ -138,33 +127,32 @@
         <section class="section" id="sobre">
             <div class="container about">
                 <div class="about__intro" data-aos="fade-right">
-                    <h2 class="section__title section__title--left">information</h2>
-                    <p>
-                        Llevan miles de años a nuestro lado y siguen siendo un misterio. Tres claves
-                        para entenderlos un poco mejor.
-                    </p>
+                    <h2 class="section__title section__title--left">Informacion util</h2>
                 </div>
 
                 <ul class="about__list">
                     <li class="about__item" data-aos="fade-left">
-                        <h3>Domesticación</h3>
+                        <h3>AccessTicket</h3>
                         <p>
-                            Se domesticaron por primera vez en Oriente Próximo hacia el 7500 a. C. Se
-                            valoraban por su habilidad para cazar plagas y proteger los graneros.
+                            Es el único punto de venta oficial de entradas para el festival.
+                       </p>
+                    </li>
+                    <li class="about__item" data-aos="fade-left">
+                        <h3>Depósito</h3>
+                        <p>
+                        Las entradas incluyen un depósito de 15€, que se devuelve si asistes al evento.
                         </p>
                     </li>
                     <li class="about__item" data-aos="fade-left" data-aos-delay="100">
-                        <h3>Comunicación</h3>
+                        <h3>Cancelación</h3>
                         <p>
-                            Se comunican con vocalizaciones, lenguaje corporal y marcas de olor.
-                            Incluso han desarrollado maullidos específicos para los humanos.
+                        Las entradas no se pueden cancelar, solo revender a través de los canales oficiales.
                         </p>
                     </li>
                     <li class="about__item" data-aos="fade-left" data-aos-delay="200">
-                        <h3>Patrones de sueño</h3>
+                        <h3>Menores</h3>
                         <p>
-                            Duermen una media de 15 horas al día, y algunos llegan a las 20. Es un rasgo
-                            evolutivo heredado de sus ancestros salvajes.
+                          Consulta las condiciones de acceso para menores en la página web oficial.
                         </p>
                     </li>
                 </ul>
@@ -175,7 +163,7 @@
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="container footer__inner">
-            <a href="#inicio" class="logo logo--footer">Cool<span>Cats</span></a>
+            <a href="#inicio" class="logo logo--footer"><img src="media/1x/logo.svg" alt="logo ps"></a>
             <ul class="footer__links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#datos">Datos</a></li>

@@ -13,15 +13,8 @@
     --green: #B6F6A0;
     --on-accent: #212121;          /* texto sobre colores de acento */
 
-    /* Firma neo-brutalista: bordes gruesos y sombras duras sin desenfoque */
-    --border: 3px solid var(--ink);
-    --shadow-sm: 4px 4px 0 var(--ink);
-    --shadow: 6px 6px 0 var(--ink);
-    --shadow-lg: 10px 10px 0 var(--ink);
-
-    --font-display: "Archivo Black", "Arial Black", Impact, sans-serif;
-    --font-body: "Space Grotesk", "Segoe UI", Arial, sans-serif;
-
+    --basquerville: "Baskervville", serif;
+    --century-gothic: "Century Gothic", sans-serif;
     --nav-h: 72px;
     --radius: 6px;
     --speed: 0.2s;
@@ -165,10 +158,7 @@ h3 {
 }
 
 .logo {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: var(--ink);
+    width: 0,1rem;
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -294,15 +284,12 @@ h3 {
     padding: calc(var(--nav-h) + 3rem) 0 4rem;
     display: flex;
     align-items: center;
-    /* Fondo de puntos, muy típico del neo-brutalismo */
-    background-image: radial-gradient(var(--dot) 1.5px, transparent 1.5px);
-    background-size: 22px 22px;
 }
 
 .hero__inner {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 6rem;
 }
 
 .hero__text {
@@ -310,7 +297,9 @@ h3 {
 }
 
 .hero__media {
-    flex: 0 1 700px;              /* tamaño máximo del círculo en escritorio */
+    display: flex;
+    justify-content: center;
+    flex: 0 1 100px;        
     margin: 0 auto;
     position: relative;
     animation: popIn 0.8s 0.4s ease both;
@@ -331,41 +320,10 @@ h3 {
     animation: slideUp 0.6s ease both;
 }
 
-.hero__title {
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
-    margin-bottom: 1.2rem;
-    animation: slideUp 0.6s 0.1s ease both;
-}
-
-.hero__subtitle {
-    font-size: 1.2rem;
-    color: var(--muted);
-    max-width: 34rem;
-    margin-bottom: 2rem;
-    animation: slideUp 0.6s 0.2s ease both;
-}
-
-.hero__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    animation: slideUp 0.6s 0.3s ease both;
-}
-
-.hero__frame {
-    /* Círculo: caja cuadrada (aspect-ratio 1/1) + border-radius 50%.
-       overflow: hidden recorta la imagen a la forma del círculo y
-       la sombra dura también sigue la forma redonda. */
-    aspect-ratio: 1 / 1;
-    border: 4px solid var(--ink);
-    border-radius: 50%;
-    box-shadow: var(--shadow-lg);
-    overflow: hidden;
-    /* Relleno de rayas mientras carga la imagen (o si falla) */
-    background: repeating-linear-gradient(45deg, var(--blue) 0 14px, var(--surface) 14px 28px);
-}
 
 .hero__frame img {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -508,10 +466,6 @@ main {
     transition: transform var(--speed) ease, box-shadow var(--speed) ease;
 }
 
-.card--yellow { --card-accent: var(--yellow); }
-.card--pink { --card-accent: var(--pink); }
-.card--blue { --card-accent: var(--blue); }
-
 .card:hover {
     transform: translate(-4px, -4px) rotate(-1deg);
     box-shadow: var(--shadow-lg);
@@ -524,96 +478,35 @@ main {
     background: repeating-linear-gradient(45deg, var(--card-accent) 0 14px, var(--surface) 14px 28px);
 }
 
-.card__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.card:hover .card__img img {
-    transform: scale(1.08);
-}
-
-.card__body {
-    padding: 1.4rem;
-    flex: 1;
-}
-
-.card__num {
-    display: inline-block;
-    margin-bottom: 0.8rem;
-    padding: 0.1rem 0.6rem;
-    font-family: var(--font-display);
-    background: var(--card-accent);
-    color: var(--on-accent);
-    border: var(--border);
-    border-radius: var(--radius);
-}
-
-.card h3 {
-    font-size: 1.35rem;
-    margin-bottom: 0.7rem;
-}
-
-.card p {
-    color: var(--muted);
-}
 
 /* ---------- 9. GALERÍA (GRID SENCILLO) ---------- */
 .gallery {
-  display: flex;                
-  width: 300px;                
-  overflow-x: auto;             
-  gap: 10px;                   
-  padding: 10px;
-  border: 1px solid #ccc;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;    
+  overflow-x: auto;      
+  overflow-y: hidden;
+  padding: 20px;
 }
 
 .gallery__item {
-  flex: 0 0 auto;
-  width: 100px;                
-  height: 80px;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.gallery__img {
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-bottom: var(--border);
-    background: repeating-linear-gradient(-45deg, var(--pink) 0 14px, var(--surface) 14px 28px);
+  flex: 0 0 auto;        
+  margin: 0;
 }
 
 .gallery__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: grayscale(40%);
+  height: 400px;        
+  width: auto;          
+  display: block;
 }
-
+.gallery::-webkit-scrollbar {
+  display: none; 
+}
 .gallery__item:hover .gallery__img img {
     transform: scale(1.1) rotate(2deg);
     filter: grayscale(0);
 }
-
-.gallery__item figcaption {
-    padding: 0.8rem 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-size: 0.9rem;
-    transition: background-color var(--speed) ease, color var(--speed) ease;
-}
-
-.gallery__item:hover figcaption {
-    background: var(--green);
-    color: var(--on-accent);
-}
-
 /* ---------- 10. SOBRE ELLOS (FLEXBOX) ---------- */
 .about {
     display: flex;
