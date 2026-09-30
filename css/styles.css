@@ -8,10 +8,10 @@
 :root {
     /* Colores de acento (iguales en los dos modos) */
     --yellow: #FFD23F;
-    --pink: #FF5C8A;
-    --blue: #4D9DFF;
-    --green: #3DDC97;
-    --on-accent: #111111;          /* texto sobre colores de acento */
+    --pink: #CD6C97;
+    --blue: #75D2DE;
+    --green: #B6F6A0;
+    --on-accent: #212121;          /* texto sobre colores de acento */
 
     /* Firma neo-brutalista: bordes gruesos y sombras duras sin desenfoque */
     --border: 3px solid var(--ink);
@@ -562,17 +562,22 @@ main {
 
 /* ---------- 9. GALERÍA (GRID SENCILLO) ---------- */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.8rem;
+  display: flex;                
+  width: 300px;                
+  overflow-x: auto;             
+  gap: 10px;                   
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
 .gallery__item {
-    background: var(--surface);
-    border: var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
+  flex: 0 0 auto;
+  width: 100px;                
+  height: 80px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery__img {
