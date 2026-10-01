@@ -1,17 +1,10 @@
-/* =========================================================
-   COOL CATS · Estilo neo-brutalista
-   CSS puro: variables, flexbox, grid, media queries y
-   animaciones CSS3. Modo claro/oscuro con [data-theme].
-   ========================================================= */
-
 /* ---------- 1. VARIABLES ---------- */
 :root {
-    /* Colores de acento (iguales en los dos modos) */
+   
     --pink: #CD6C97;
     --blue: #75D2DE;
     --green: #B6F6A0;
-    --on-accent: #212121;          /* texto sobre colores de acento */
-
+    --on-accent: #212121;         
     --basquerville: "Baskervville", serif;
     --century-gothic: "Century Gothic", sans-serif;
     --nav-h: 72px;
@@ -30,7 +23,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--nav-h) + 16px);   /* los anclas no quedan tapadas por el menú fijo */
+    scroll-padding-top: calc(var(--nav-h) + 16px);   
 }
 
 body {
@@ -43,7 +36,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Clase que añade el JS con el menú móvil abierto: evita el scroll de fondo */
 body.menu-open {
     overflow: hidden;
 }
@@ -202,8 +194,6 @@ ul {
     background: var(--on-accent);
     transition: transform 0.3s ease, opacity 0.2s ease;
 }
-
-/* Las tres barras se convierten en una X cuando el menú está abierto */
 .menu-toggle[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -217,6 +207,12 @@ ul {
 }
 
 /* ---------- 5. HERO ---------- */
+h4{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 100;
+}
 .hero {
     min-height: 100vh;
     padding: calc(var(--nav-h) + 3rem) 0 4rem;
@@ -291,60 +287,7 @@ ul {
     animation: spin 14s linear infinite;
 }
 
-/* ---------- 6. CINTA (MARQUEE) ---------- */
-/* Técnica de Ryan Mulligan: https://ryanmulligan.dev/blog/css-marquee/
-   - Cada lista mide como mínimo el 100% del ancho (min-width: 100%),
-     así nunca queda un hueco aunque la pantalla sea muy ancha.
-   - Las dos listas se mueven su propio ancho + el gap; en ese punto
-     la segunda está justo donde empezó la primera y el bucle no se nota. */
-.marquee {
-    --gap: 2rem;
-    display: flex;
-    gap: var(--gap);
-    overflow: hidden;
-    user-select: none;
-    padding: 0.9rem 0;
-    background: var(--ink);
-    color: var(--bg);
-    border-top: var(--border);
-    border-bottom: var(--border);
-}
-
-.marquee__content {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    gap: var(--gap);
-    min-width: 100%;
-    animation: marquee 20s linear infinite;
-}
-
-.marquee__content li {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-/* Separador decorativo: es un <li> más, así queda centrado entre palabras */
-.marquee__sep {
-    color: var(--yellow);
-}
-
-/* En modo oscuro la cinta es clara: el separador pasa a rosa para que se vea */
-[data-theme="dark"] .marquee__sep {
-    color: var(--pink);
-}
-
-/* Pausa al pasar el ratón */
-.marquee:hover .marquee__content {
-    animation-play-state: paused;
-}
-
 /* ---------- 7. SECCIONES ---------- */
-
-/* Evita scroll horizontal mientras AOS tiene elementos desplazados
-   (por ejemplo fade-left empieza fuera de la pantalla) */
 main {
     overflow-x: hidden;
     overflow-x: clip;
@@ -361,13 +304,13 @@ main {
 }
 
 .section__title {
-    display: table;             /* se ajusta al texto y permite centrar con margin auto */
+    display: table;           
     margin: 0 auto 3.5rem;
     padding: 0.4rem 1.2rem;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(6rem, 4vw, 2.8rem);
     font-family: var(--basquerville) ;
     font-weight: bold;
-    
+    font-style: italic;
 }
 
 .section__title--left {
@@ -382,8 +325,7 @@ main {
     gap: 1rem;
 }
 
-/* El wrapper lleva el data-aos; así la animación de AOS
-   no pisa el transform del :hover de la tarjeta */
+
 .cards__item {
     flex: 1 0 280px;
     display: flex;
@@ -662,7 +604,8 @@ section > form > input[type=submit]:hover,
 
 @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - var(--gap))); }   /* su ancho + el hueco entre las dos listas */
+    to { transform: translateX(calc(-100% - var(--gap))); 
+    } 
 }
 
 /* ---------- 13. RESPONSIVE (MEDIA QUERIES) ---------- */
@@ -701,23 +644,17 @@ section > form > input[type=submit]:hover,
 
     }
 
-    /* Nav que se esconde al bajar (clase que pone el JS).
-       Se sube su altura + 8px para que tampoco se vea la sombra. */
     .nav--hidden {
         transform: translateY(calc(-100% - 8px));
     }
 
-    /* Capas en móvil (de abajo a arriba):
-       1. el menú a pantalla completa
-       2. una "barra" opaca (::before) para que el menú salga por debajo del nav
-       3. el logo y los botones */
     .nav::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: -3px;                 /* cubre también el borde inferior del nav */
+        bottom: -3px;            
         z-index: 2;
         background: var(--pink);
         border-bottom: var(--border);
@@ -738,7 +675,7 @@ section > form > input[type=submit]:hover,
         z-index: 1;
         width: 100%;
         height: 100vh;
-        height: 100dvh;               /* alto real en móviles con barra del navegador */
+        height: 100dvh;             
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -747,21 +684,18 @@ section > form > input[type=submit]:hover,
         background-color: var(--pink);
         background-image: radial-gradient(var(--dot) 1.5px, transparent 1.5px);
         background-size: 22px 22px;
-        border-bottom: 6px solid var(--ink);   /* borde grueso visible mientras se desliza */
+        border-bottom: 6px solid var(--ink);   
         transform: translateY(-100%);
-        visibility: hidden;           /* cerrado: los enlaces no reciben foco */
-        /* Al cerrar: primero se desliza y, al terminar (0.45s), se oculta */
+        visibility: hidden;         
         transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1), visibility 0s linear 0.45s;
     }
 
-    /* Abierto: baja hasta su sitio. La visibilidad cambia sin retardo */
     .nav__links.is-open {
         transform: translateY(0);
         visibility: visible;
         transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1), visibility 0s linear 0s;
     }
 
-    /* Los enlaces aparecen uno detrás de otro */
     .nav__links li {
         opacity: 0;
         transform: translateY(-16px);
