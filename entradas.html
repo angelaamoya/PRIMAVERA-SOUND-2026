@@ -1,1 +1,88 @@
-ss
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primavera Sound 2026</title>
+
+    <!-- Tipografías (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+     <!-- Tipografías (locales) -->
+      <link href="fonts/century gothic/Century Gothic Bold Italic.otf">
+      <link href="fonts/century gothic/Century Gothic Bold.otf">
+    <link href="fonts/century gothic/Century Gothic Italic.otf">
+    <link href="fonts/century gothic/Century Gothic Regular.otf">
+    <!-- AOS desde CDN (jsDelivr), versión fijada -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Nuestros estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============ NAVEGACIÓN ============ -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="logo"><img src="media/1x/logo.svg" alt="logo ps"></a>
+
+            <ul class="nav__links" id="menu">
+                <li><a href="index.html">lineup</a></li>
+                <li><a href="index.html">tickets</a></li>
+                <li><a href="index.html">information</a></li>
+            </ul>
+
+            <div class="nav__actions">
+
+                <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+        <div class="formulario">
+        <section id="ticket">
+            <h1>Buy yourr festival pass!</h1>
+            <!-- Se añade la detección del evento Submit para llamar a la función comprar() cuando se pulse el botón -->
+            <form onsubmit="return comprar()">
+                <label for="nombre">Full Name:</label>
+                <input type="text" id="nombre" placeholder="Write your name" required>
+                <label for="correo">Email:</label>
+                <input type="email" id="correo" placeholder="Email" required>
+                <label for="exposicion">Exposición:</label>
+                <!-- Se llama a la función costeTotal() cuando hay cambios en la exposición seleccionada -->
+                <select id="exposicion" onchange="costeTotal()">
+                    <option value="e1">General  - 360 €</option>
+                    <option value="e2">Day Pass - 150 €</option>
+                    <option value="e3">VIP - 560 €</option>
+                </select>
+                <label for="numero">Number of tickets:</label>
+                <!-- Se llama a la función costeTotal() cuando hay cambios en el número de entradas -->
+                <input type="number" id="numero" min="1" max="10" placeholder="Number of tickets" required onchange="costeTotal()">
+                <p>Total cost: <span id="coste"></span></p>
+                <input type="submit" value="Buy Tickets">
+            </form>
+        </section>
+        <div id="modal">
+            <div>
+                <h2>Thanks for your purchase</h2>
+                <ul>
+                    <li>Name: <span id="nom"></span></li>
+                    <li>Email: <span id="corr"></span></li>
+                    <li>Ticket type: <span id="ex"></span></li>
+                    <li>Number of tickets: <span id="num"></span></li>
+                    <li>Total Cost: <span id="ct"></span></li>
+                </ul>
+                <!-- Se llama a la función cerrarVentana() cuando se pulsa el botón -->
+                <button onclick="cerrarVentana()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
