@@ -347,6 +347,9 @@ main {
     justify-content: center;
     font-size: 2rem;
     text-decoration: none;
+    background-color: #B6F6A0;
+    margin: 10%;
+    border-radius: 25px;
 }
 
 /* ----------Cartel---------- */
@@ -457,6 +460,18 @@ h2{
 }
 
 /* ---------- 11. FOOTER ---------- */
+.logo{
+    width: 20%;
+}
+.patrocinadores{
+    display: flex;
+    justify-content:center;
+    gap: 4rem;
+}
+
+.cupra{
+    width: 15%;
+}
 .footer {
     padding: 3rem 0;
     background: var(--yellow);
@@ -504,6 +519,16 @@ h2{
     opacity: 0.8;
 }
 /* ----------COMPRAS---------- */
+input{
+    border-radius: 25px;
+    background-color: #ffc9e1;
+    border-style: none;
+}
+select {
+    border-radius: 25px;
+    background-color: #ffc9e1;
+    border-style: none;
+}
 .formulario{
     background-color: var(--green);
 }
